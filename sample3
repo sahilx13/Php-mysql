@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    	<link type="text/css" rel="stylesheet" href="style.css"/>
+	<title>Registration form</title>
+    
+    <script language="javascript">
+    function validate()
+    {
+        var invalid=" ";
+        var min=8;
+        var n=document.getElementById('n').value;
+        var co=document.getElementById('co').value;
+        var id=document.getElementById('id').value;
+        var pw=document.getElementById('p').value;
+        var pw1=document.getElementById('p2').value;
+        if(n=="")
+        {
+            alert('Name field cannot be left blank!!')
+            document.myform.n.focus();
+            return false;
+        }
+        else if(id=="")
+        {
+             alert('ID field cannot be left blank!!')
+            document.myform.id.focus();
+            return false;
+        }
+        else if (pw.length < min) 
+        {
+        alert('Your password must be at least ' + min + ' characters long. Try again.');
+        document.myform.P.focus();
+        return false;
+        }
+        else if (pw.indexOf(invalid) > -1) 
+        {
+        alert("Sorry, spaces are not allowed.");
+         document.myform.P.focus();
+        return false;
+        }
+        else if(pw!=pw1)
+        {
+            alert("passwords do not match!!");
+            document.myform.p2.focus();
+            return false;
+        }
+        else if(co=="")
+        {
+            alert("contact field cannot be left blank!!")
+            document.myform.co.focus();
+            return false;
+        }
+        else if(co.length<10)
+        {
+            alert("invalid contact number...!!")
+            document.myform.co.focus();
+            return false;
+
+        }
+        else
+        {
+        alert("Thanks for registering!!")
+        return true; 
+        }   
+    }   
+    </script>
+</head>
+
+<body class="html">
+<form  name="myform" action="reg.php" method="post" onsubmit="return validate();" >
+<table >
+<tbody class="td">
+    <h2 id="h2">Enter your Details:</h2>
+    <tr>
+    <td class="td">User ID: <sup>*</sup></td>
+    <td><input type="text" name="id" id="id"/></td>
+    </tr>
+    <tr>
+    <td>Name: <sup>*</sup> </td>
+    <td><input type="text" name="n" id="n"/></td>
+    </tr>
+    <tr>
+    <td>Password: <sup>*</sup></td>
+    <td><input type="password" name="p" id="p"/>(Atleast 8 alphanumerics and no spaces..)</td>
+    </tr>
+    <tr>
+    <td>Confirm Password:</td>
+    <td><input type="password" name="p2" id="p2"/></td>
+    </tr>
+    <tr>
+    <td>Gender:</td>
+    <td><input type="radio" name="g1" value="Male"/>Male<input type="radio" name="g1" value="Female"/>Female</td>
+    </tr>
+    <tr>
+    <td>Contact no: <sup>*</sup></td>
+    <td><input type="text" name="co" id="co"/></td>
+    </tr>
+    <tr>
+    <td>Email Address:</td>
+    <td><input type="text" name="e" id="e"  /></td>
+    </tr>
+    <tr>
+    <td>City:</td>
+    <td><input type="text" name="c" id="c"/></td>
+    </tr>
+    <tr>
+    <td>State:</td>
+    <td><input type="text" name="s" id="s"/></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr>
+    <td colspan="2" align="center"><input type="image" src="submit.png" height=40% width=20% /></td>
+    </tr>
+</tbody>
+</table>
+</form>
+</body>
+</html>
