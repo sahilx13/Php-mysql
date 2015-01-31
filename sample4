@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+	<title>login form</title>
+    <link rel="stylesheet" href="style.css" type="TEXT/CSS"/>
+</head>
+
+<body background="fly.png">
+<form action="validation.php" method="post">
+    <table>
+    <tbody class="td2">
+    <div>
+        <h2 id="h3"> Enter your Login details :</h2>
+    </div>
+    <tr>
+        <td><b>ID</b></td>
+        <td><input type="text" name="id"/></td>
+    </tr>
+    <tr>
+        <td><b>Pass</b></td>
+        <td><input type="password" name="pass"/></td>
+    </tr>
+    <tr><td>&nbsp;</td></tr> 
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td colspan="2" align="right">
+        <input type="image" src="login.png" height="50%" width="50%"/>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+</form>
+</body>
+</html>
