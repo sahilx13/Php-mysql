@@ -1,0 +1,28 @@
+<?php
+$a=$_POST['id'];
+$p=$_POST['pass'];
+$i=0;
+mysql_connect("localhost","root","2013");
+mysql_select_db("sahil");
+$result=mysql_query("select id,pass from user");
+while($row=mysql_fetch_array($result))
+{
+    if(strcmp($a,$row['id'])==0)
+    {
+        if(strcmp($p,$row['pass'])==0)
+        {
+            $i=1;
+        }
+    }
+}
+if($i==1)
+{
+  header("Location:final.htm");
+  exit;
+}
+else
+{
+    header("Location:login.htm");
+}
+
+?>
